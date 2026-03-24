@@ -1,0 +1,113 @@
+/*"limpiar pantalla"*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: verdana,geneva,Tahoma, sans-serif;
+}
+
+header{
+    height : 100px; /*ALURA DE HEADER*/
+    background: #0e3bb0; /*FONDO DE HEADER */
+    PADDING: 0 50px; /*(queda mas centrado, inferior y superior 0, izquierda y derecha 50px )*/
+    color: #ffffff; /*color de la letra */
+    display: flex; /*QUEDE ORDENADO UNO A la par del OTRO */
+    justify-content: space-between; /*se acomode mejor y queda separados */
+    align-items: center; /*quede todo centrado verticalmente */
+
+}
+.logo{
+    text-transform: uppercase; /*letra mayuscula */
+    color: #43c6cf; /*color del logo */
+    font-weight: 200;  /*grosor del texto */
+}
+
+.menu a{
+    color: #fff; /*color de los enlaces */
+    text-transform: uppercase; /*letra mayuscula */
+    text-decoration: none; /*quitar diseño, en el caso si subrayado */
+    padding : 0 10px; /*separacion entre los enlaces */
+    transition: 0.45; /*retarda efecto de un instante */
+}
+
+.mostrar-menu,
+.esconder-menu {
+    font-size: 30px;
+    cursor: pointer;
+    /* Para mostrar el cursor por encima del menu */
+    display: none;
+    transition: 0.4s;
+    /* Retarda el Efecto un instante */
+}
+
+.mostrar-menu {
+    order: 1;
+    /* Pasarlo al inicio */
+}
+
+/*al pasar el mouse cambia de color */
+.menu a:hover,
+.mostrar-menu:hover,
+.esconder-menu:hover{
+    color: #43c6cf; /*color al pasar el mouse */
+}
+
+#check{
+    display: none; /*ocultar el checkbox */
+}
+
+/*-----banner-----*/
+
+#banner{
+    padding : 0 50px;
+    background-image: url(../IMAGENES/banner-estudiantes_0.jpg); /*poner imagen de fondo*/
+    height: 50vh; /*el contenido del banner ocupa una altura del 50% en la pantalla */
+    background-size: cover; /*para que la imagen cubra todo*/
+    background-position: center; /*centra la imagen*/
+}
+
+#banner::before{ /*es un elemento virtual que se genere automaticamente antes del contenido real
+     del elemento, se usa para efectos decorativos.*/
+    
+     content: ""; /*contenido vacio 
+    (esto es obligatorio para que funcione, ya que si no, no aparecera la decoracion)   */
+
+    background: rgba (77,77,92,0.6); /*color de fondo con transparencia (rgba) */
+    position: absolute; /*permite que la capa se pege al banner*/
+    width: 100%; /*permite que cubra todo el area del banner*/
+    height: 50vh; /*abarce el 50% de la altura del banner*/
+    left: 0; /*para que inicie desde el borde izquierdo*/
+}
+
+/*acomodar el contenido del banner por encima de la capa oscura*/
+.contenido-banner{
+    position: relative; /*el contenido se pocisiona de forma relativa dentro del contenedor 
+    y nos permite ubicarlo por encima*/
+
+    color: #fff; /*color del texto*/
+    height: 100%; /*ocupa el 100% del contenedor*/
+    display: flex; /*para que el contenido se acomode uno al lado del otro*/
+    flex-direction: column; /*colocar el contenido uno debajo del otro*/
+    justify-content: center; /*para centrar verticalmente*/
+}
+
+.contenido-banner h3{
+    font-size: 30px;
+    font-weight: 400;
+    padding: 10px 0px;
+}
+
+.contenido-banner h3 span{
+font-weight: 600; /*negrita */  
+}
+
+.boton-empezar{
+    text-decoration:none;
+    color: #fff;
+    border: 1px solid #43c6cf;
+    padding: 20px 40px;
+    align-self: baseline; /*alinear el boton al inicio del contenido */
+    transition: 0.4s;
+}
+ .boton-empezar:hover{
+    background: #43c6cf;
+ }

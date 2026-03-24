@@ -1,0 +1,752 @@
+/* RESET Limpiar la web */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+footer {
+    background: #0e3bb4;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0 px;
+}
+#Fondo-Pagina-Web {
+    /*FONDO */
+    padding: 0px 50px;
+    background: rgba(212, 234, 255, 0.671);
+}
+
+/* ==================== MENÚ HORIZONTAL ==================== */
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*indice de CabezaM*/
+.menu-indice {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+.menu-indice li {
+    position: relative;
+}
+
+.menu-indice > li > a {
+    display: block;
+    padding: 10px 15px;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: #333;
+    border-radius: 5px;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.menu-indice > li > a:hover {
+    background: #e0e0e0;
+    border-color: #999;
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////*/
+
+/* Submenu desplegable */
+.submenu {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0 0;
+    position: absolute;
+    left: 0;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-width: 200px;
+    z-index: 100;
+}
+
+.submenu li {
+    margin: 0;
+}
+
+.submenu li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    transition: 0.3s;
+}
+
+.submenu li a:hover {
+    background: #e8e8e8;
+}
+
+
+
+/*///////////////////////////////////////////////////////////////////////////////////*/
+
+/* Logo junto al título */
+h2.logoP {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+h2.logoP .logo-img {
+    width: 96px;
+    height: auto;
+    display: block;
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////*/
+
+/*< cabezera del menu*/
+header#CabezaM {
+    /*FONDO DE OPCIONES */
+    height: 100px;
+    /* Altura del Header */
+    background: #a0c092;
+    /* Fondo del Header */
+    padding: 0 50px;
+    /* Queda mas centrado, inferior y superior 0, izquierda y derecha 50px */
+    color: #eee5e5;
+    /* Col|or de Letra */
+    display: flex;
+    /* Quete todo ordenado uno a la par del otro */
+    justify-content: space-between;
+    /* Se acomode mejor y queden separados */
+    align-items: center;
+    /* quede todo centrado */
+}
+
+
+.logo {
+    /*COLOR DE LAS LETRAS DEL LADO IZQUIERDO = OPCIONES*/
+    text-transform: uppercase;
+    /* Pone todo el texto en mayuscula */
+    color: #d6dbda;
+    /* Color texto */
+    font-weight: 200;
+    /* Grosor del Texto */
+}
+
+.menu a {
+    /*COLOR DE LAS LETRAS LADO DERECHO = OPCIONES*/
+    color: #FFF;
+    text-transform: uppercase;
+    text-decoration: none;
+    /* Quitar diseno, en este caso el subrayado */
+    padding: 0 10px;
+    transition: 0.45s;
+    /* Retarda el Efecto un instante */
+}
+
+.mostrar-menu,
+.esconder-menu {
+    font-size: 30px;
+    cursor: pointer;
+    /* Para mostrar el cursor por encima del menu */
+    display: none;
+    transition: 0.4s;
+    /* Retarda el Efecto un instante */
+}
+
+.mostrar-menu {
+    order: 1;
+    /* Pasarlo al inicio */
+}
+
+/* Al pasar el mouse cambie de color */
+.menu a:hover,
+.mostrar-menu:hover,
+.esconder-menu:hover {
+    color: #6fa182;
+}
+
+
+#check {
+    display: none;
+}
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/**carrusel**/
+
+header#carusel {
+    /*FONDO DE OPCIONES */
+    height: 300px;
+    /* Altura del Header */
+    max-width: 1330px;
+    /*ajuste de ancho*/
+
+    background: #000000;
+    /* Fondo del Header */
+
+    /* Col|or de Letra */
+    display: flex;
+    /* Quete todo ordenado uno a la par del otro */
+    justify-content: space-between;
+    /* Se acomode mejor y queden separados */
+    align-items: center;
+    /* quede todo centrado */
+    border: 3px solid #020202;
+}
+
+/* 1. Contenedor principal: limita el tamaño y posiciona los botones */
+.carousel-Contiene {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    /* Misma altura que header#carusel */
+    max-width: 1340px;
+    /* Ajusta a tu gusto */
+    margin: auto;
+    overflow: hidden;
+    /* Oculta las imágenes que no están a la vista */
+    border-radius: 10px;
+}
+
+/* 2. El "riel": contiene todas las imágenes en una fila larga */
+.carousel-Tipo {
+    display: flex;
+    transition: transform 0.1s ease-in-out;
+    /* Animación suave */
+}
+
+/* 3. Cada item: asegura que cada imagen ocupe el 100% del contenedor */
+.carousel-Imagen {
+    min-width: 100%;
+    flex-shrink: 0;
+}
+
+.carousel-Imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* 4. Botones: posicionamiento absoluto sobre la imagen */
+.CarrucelA,
+.CarrucelS {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.CarrucelA:hover,
+.CarrucelS:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Efecto hover */
+}
+
+.CarrucelA {
+    left: 10px;
+}
+
+
+.CarrucelS {
+    right: 10px;
+}
+
+
+/*//////////////////////////////////////////////////////////////////////////////////*/
+
+/*color del fondo de caja informacion lugares */
+.caja-informacion-lugares-1{
+    background: #D4EAFF;
+    border-radius: 10px;
+    border: 2px solid #407056;
+    padding: 15px;
+    color: #000000;
+    margin: 20px 0;
+    height: 970px;
+        /* Misma altura que  */
+        max-width: 550px;
+        /* Ajusta a tu gusto */
+}
+
+.caja-informacion h6 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+}
+
+.caja-informacion p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.boton-formulario {
+    display: block;
+    text-align: center;
+}
+
+footer {
+    background: #0e3bb4;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0 px;
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////*/
+
+/*color del fondo de caja informacion horarios*/
+.caja-informacion-Horarios {
+    background: #D4EAFF;
+    border-radius: 10px;
+    border: 2px solid #407056;
+    padding: 15px;
+    color: #000000;
+    margin: 20px 0;
+    height: 965px;
+    /* Misma altura  */
+    max-width: 350px;
+    /* Ajusta a tu gusto */
+}
+
+.caja-informacion h6 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+}
+
+.caja-informacion p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.boton-formulario {
+    display: block;
+    text-align: center;
+}
+
+footer {
+    background: #0e3bb4;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0 px;
+}
+
+
+/*//////////////////////////////////////////////////////////////////////////////////*/
+/*//////////////////////////////////////////////////////////////////////////////////*/
+
+/*color del fondo de caja informacion lugares */
+.caja-informacion-lugares-2 {
+    background: #D4EAFF;
+    border-radius: 10px;
+    border: 2px solid #407056;
+    padding: 15px;
+    color: #000000;
+    margin: 20px 0;
+    height: 970px;
+    /* Misma altura que  */
+    max-width: 550px;
+    /* Ajusta a tu gusto */
+}
+
+.caja-informacion h6 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+}
+
+.caja-informacion p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.boton-formulario {
+    display: block;
+    text-align: center;
+}
+
+footer {
+    background: #0e3bb4;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0 px;
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////*/
+.caja-informacion-precios {
+    background: #D4EAFF;
+    border-radius: 10px;
+    border: 2px solid #407056;
+    padding: 15px;
+    color: #000000;
+    margin: 20px 0;
+    height: 970px;
+    /* Misma altura  */
+    max-width: 350px;
+    /* Ajusta a tu gusto */
+}
+
+.caja-informacion h6 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+}
+
+.caja-informacion p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.boton-formulario {
+    display: block;
+    text-align: center;
+}
+
+footer {
+    background: #0e3bb4;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0 px;
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////*/
+/*//////////////////////////////////////////////////////////////////////////////////*/
+
+/*color del fondo de caja informacion lugares */
+.caja-informacion-lugares-3 {
+    background: #D4EAFF;
+    border-radius: 10px;
+    border: 2px solid #407056;
+    padding: 15px;
+    color: #000000;
+    margin: 20px 0;
+    height: 970px;
+    /* Misma altura que  */
+    max-width: 550px;
+    /* Ajusta a tu gusto */
+}
+
+.caja-informacion h6 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+}
+
+.caja-informacion p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.boton-formulario {
+    display: block;
+    text-align: center;
+}
+
+footer {
+    background: #0e3bb4;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0 px;
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////*/
+
+.caja-informacion-propietarios {
+    background: #D4EAFF;
+    border-radius: 10px;
+    border: 2px solid #407056;
+    padding: 15px;
+    color: #000000;
+    margin: 20px 0;
+    height: 970px;
+    /* Misma altura  */
+    max-width: 350px;
+    /* Ajusta a tu gusto */
+}
+
+.caja-informacion h6 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+}
+
+.caja-informacion p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.boton-formulario {
+    display: block;
+    text-align: center;
+}
+
+footer {
+    background: #0e3bb4;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0 px;
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////*/
+/*color del fondo de caja informacion lugares */
+.caja-informacion-lugares-4 {
+    background: #D4EAFF;
+    border-radius: 10px;
+    border: 2px solid #407056;
+    padding: 15px;
+    color: #000000;
+    margin: 20px 0;
+    height: 900px;
+    /* Misma altura que  */
+    max-width: 550px;
+    /* Ajusta a tu gusto */
+}
+
+.caja-informacion h6 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+}
+
+.caja-informacion p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.boton-formulario {
+    display: block;
+    text-align: center;
+}
+
+footer {
+    background: #0e3bb4;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0 px;
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////*/
+
+.caja-informacion-ubicacion {
+    background: #D4EAFF;
+    border-radius: 10px;
+    border: 2px solid #407056;
+    padding: 15px;
+    color: #000000;
+    margin: 20px 0;
+    height: 900px;
+    /* Misma altura  */
+    max-width: 350px;
+    /* Ajusta a tu gusto */
+}
+
+.caja-informacion h6 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+}
+
+.caja-informacion p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.boton-formulario {
+    display: block;
+    text-align: center;
+}
+
+footer {
+    background: #0e3bb4;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0 px;
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////*/
+
+/*color del fondo de caja informacion lugares */
+.caja-informacion-lugares-5 {
+    background: #D4EAFF;
+    border-radius: 10px;
+    border: 2px solid #407056;
+    padding: 15px;
+    color: #000000;
+    margin: 20px 0;
+    height: 850px;
+    /* Misma altura que  */
+    max-width: 550px;
+    /* Ajusta a tu gusto */
+}
+
+.caja-informacion h6 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+}
+
+.caja-informacion p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.boton-formulario {
+    display: block;
+    text-align: center;
+}
+
+footer {
+    background: #0e3bb4;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0 px;
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////*/
+
+.caja-informacion-historia {
+    background: #D4EAFF;
+    border-radius: 10px;
+    border: 2px solid #407056;
+    padding: 15px;
+    color: #000000;
+    margin: 20px 0;
+    height: 850px;
+    /* Misma altura que  */
+    max-width: 550px;
+    /* Ajusta a tu gusto */
+}
+
+.caja-informacion h6 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+}
+
+.caja-informacion p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.boton-formulario {
+    display: block;
+    text-align: center;
+}
+
+footer {
+    background: #0e3bb4;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0 px;
+}
+
+
+/*//////////////////////////////////////////////////////////////////////////////////*/
+/*color del fondo de caja informacion lugares */
+.caja-informacion-lugares-6 {
+    background: #D4EAFF;
+    border-radius: 10px;
+    border: 2px solid #407056;
+    padding: 15px;
+    color: #000000;
+    margin: 20px 0;
+    height: 950px;
+    /* Misma altura que  */
+    max-width: 550px;
+    /* Ajusta a tu gusto */
+}
+
+.caja-informacion h6 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+}
+
+.caja-informacion p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.boton-formulario {
+    display: block;
+    text-align: center;
+}
+
+footer {
+    background: #0e3bb4;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0 px;
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////*/
+.caja-informacion-mision-vision {
+    background: #D4EAFF;
+    border-radius: 10px;
+    border: 2px solid #407056;
+    padding: 15px;
+    color: #000000;
+    margin: 20px 0;
+    height: 950px;
+    /* Misma altura  */
+    max-width: 350px;
+    /* Ajusta a tu gusto */
+}
+
+.caja-informacion h6 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+}
+
+.caja-informacion p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.boton-formulario {
+    display: block;
+    text-align: center;
+}
+
+footer {
+    background: #0e3bb4;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0 px;
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////*/
+
+/* ==================== CONTENEDOR DOS COLUMNAS ==================== */
+
+.contenedor-dos-columnas {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contenedor-dos-columnas>div {
+    flex: 1;
+    min-width: 0;
+}
+
+.caja-informacion-lugares {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.caja-informacion-Horarios {
+    background: #fffbf0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive: en pantallas pequeñas, una debajo de otra */
+@media (max-width: 768px) {
+    .contenedor-dos-columnas {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
